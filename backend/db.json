@@ -46,6 +46,5 @@
       "formacao": "Ensino médio e curso técnico em andamento",
       "skills": "Fluente em inglês e francês"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }

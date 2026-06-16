@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForOf } from '@angular/common';
 import { Curriculo } from '../../model/curriculo.model';
 import { Apiservice } from '../../service/apiservice.service';
 
 @Component({
   selector: 'app-curriculos',
-  imports: [],
+  imports: [NgForOf],
   templateUrl: './curriculos.html',
   styleUrl: './curriculos.scss',
 })

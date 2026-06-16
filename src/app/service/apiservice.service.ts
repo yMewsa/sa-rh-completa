@@ -2,60 +2,53 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Vaga } from '../model/vaga.model';
-import { Curriculo } from '../model/curriculo.model'
-import { console } from 'inspector';
+import { Curriculo } from '../model/curriculo.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Apiservice {
-  //Atributo
-  private apiUrl = 'http://localhost:3021/vagas'; // Caminho da API
+  private vagasUrl = 'http://localhost:3021/vagas';
+  private curriculosUrl = 'http://localhost:3021/curriculos';
 
-  constructor(private http: HttpClient) {} // Ao criar um obj da API estabele a conexão com HttpClient
+  constructor(private http: HttpClient) {}
 
   // Vagas
-  //Métodos de Conexão com API (GET, POST, PUT, DELETE)
-  //Get -> Read
   getVagas(): Observable<Vaga[]> {
-    // Observable -> Permite conexões assyncs com a API
-    return this.http.get<Vaga[]>(this.apiUrl);
-  }
-  // Post -> Create
-  postVaga(vaga: Vaga): Observable<Vaga[]> {
-    return this.http.post<Vaga[]>(this.apiUrl, vaga);
+    return this.http.get<Vaga[]>(this.vagasUrl);
   }
 
-  // Put -> Update
+  postVaga(vaga: Vaga): Observable<Vaga[]> {
+    return this.http.post<Vaga[]>(this.vagasUrl, vaga);
+  }
+
   putVaga(id: any, vaga: Vaga): Observable<Vaga[]> {
-    const urlUpdate = `${this.apiUrl}/${id}`;
+    const urlUpdate = `${this.vagasUrl}/${id}`;
     return this.http.put<Vaga[]>(urlUpdate, vaga);
   }
 
-  // Delete -> Delete
   deleteVaga(id: any): Observable<Vaga[]> {
-    const urlDelete = `${this.apiUrl}/${id}`;
+    const urlDelete = `${this.vagasUrl}/${id}`;
     return this.http.delete<Vaga[]>(urlDelete);
   }
 
   // Currículos
-  // Métodos de Conexão com API para Currículos (GET, POST, PUT, DELETE)
-  // GET
   getCurriculos(): Observable<Curriculo[]> {
-    return this.http.get<Curriculo[]>(this.apiUrl);
+    return this.http.get<Curriculo[]>(this.curriculosUrl);
   }
-  // POST
+
   postCurriculo(curriculo: Curriculo): Observable<Curriculo[]> {
-    return this.http.post<Curriculo[]>(this.apiUrl, curriculo);
+    return this.http.post<Curriculo[]>(this.curriculosUrl, curriculo);
   }
-  // PUT
+
   putCurriculo(id: any, curriculo: Curriculo): Observable<Curriculo[]> {
-    const urlUpdate = `${this.apiUrl}/${id}`;
-    return this.http.put<Curriculo[]>(urlUpdate, Curriculo);
+    const urlUpdate = `${this.curriculosUrl}/${id}`;
+    return this.http.put<Curriculo[]>(urlUpdate, curriculo);
   }
-  // DELETE
+
   deleteCurriculo(id: any): Observable<Curriculo[]> {
-    const urlDelete = `${this.apiUrl}/${id}`;
+    const urlDelete = `${this.curriculosUrl}/${id}`;
     return this.http.delete<Curriculo[]>(urlDelete);
   }
 }
+

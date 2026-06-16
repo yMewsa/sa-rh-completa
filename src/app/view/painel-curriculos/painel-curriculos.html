@@ -1,20 +1,31 @@
 <h2>Preencha seu curriculo</h2>
+
 <form action="">
+  <label for="id">ID</label>
+  <input id="id" type="text" [(ngModel)] = "curriculo.id">
+
   <label for="nome">Nome</label>
   <input id="nome" type="text" [(ngModel)] = "curriculo.nome">
 
   <label for="telefone">Telefone</label>
-  <input id="telefone" type="text">
+  <input id="telefone" type="text" [(ngModel)] = "curriculo.telefone">
 
   <label for="email">Email</label>
-  <input id="email" type="text">
+  <input id="email" type="text" [(ngModel)] = "curriculo.email">
 
   <label for="experiencia">Experiencia</label>
-  <input id="experiencia" type="text">
+  <input id="experiencia" type="text" [(ngModel)] = "curriculo.experiencia">
 
   <label for="formacao">Formação</label>
-  <input id="formacao" type="text">
+  <input id="formacao" type="text" [(ngModel)] = "curriculo.formacao">
 
   <label for="skills">Skills</label>
-  <input id="skills" type="text">
+  <input id="skills" type="text" [(ngModel)] = "curriculo.skills">
+
+  <button type="button" (click)="cadastrarCurriculo()">Cadastrar Curriculo</button>
+  <button type="button" (click)="atualizarCurriculo(curriculo)">Atualizar Curriculo</button>
+  <button type="button" (click)="excluirCurriculo(curriculo)">Deletar Curriculo</button>
 </form>
+<div class="footer">
+  
+</div>

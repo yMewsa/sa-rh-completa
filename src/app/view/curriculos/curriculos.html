@@ -1,3 +1,14 @@
 <section class="listar-curriculos">
 
+  @for (curriculo of curriculos; track curriculo){
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Código do Curriculo: {{curriculo.id}}</h5>
+          <h5 class="card-title">Nome: {{curriculo.nome}}</h5>
+          <p class="card-text">Formação: {{curriculo.formacao}}</p>
+          <p class="card-text">Experiência: {{curriculo.experiencia}}</p>
+          <p class="card-text">Skills: {{curriculo.skills}}</p>
+        </div>
+      </div>
+  }
 </section>
