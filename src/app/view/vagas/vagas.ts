@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf } from '@angular/common';
 import { Apiservice } from '../../service/apiservice.service';
 import { Vaga } from '../../model/vaga.model';
 
 @Component({
   selector: 'app-vagas',
-  imports: [NgForOf],
   templateUrl: './vagas.html',
   styleUrl: './vagas.scss',
 })
