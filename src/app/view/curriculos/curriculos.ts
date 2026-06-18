@@ -5,7 +5,6 @@ import { Apiservice } from '../../service/apiservice.service';
 
 @Component({
   selector: 'app-curriculos',
-  imports: [NgForOf],
   templateUrl: './curriculos.html',
   styleUrl: './curriculos.scss',
 })
